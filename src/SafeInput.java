@@ -8,9 +8,9 @@ public class SafeInput {
      */
     public static String getNonZeroLenString(Scanner pipe, String prompt) {
 
-        String retString = "";  // Set this to zero length. Loop runs until it isn’t
+        String retString = "";
         do {
-            System.out.print("\n" + prompt + ": "); // show prompt add space
+            System.out.print("\n" + prompt + ": ");
             retString = pipe.nextLine();
         } while (retString.length() == 0);
 
@@ -71,11 +71,11 @@ public class SafeInput {
                 }
             } else {
                 System.out.println("The input you provided is invalid. Please enter a valid integer.");
-                pipe.next(); // Read and discard the invalid input
+                pipe.next();
             }
         } while (!validInput);
 
-        pipe.nextLine(); // Clear the newline character from the buffer
+        pipe.nextLine();
         return rangedInt;
     }
 
@@ -94,11 +94,11 @@ public class SafeInput {
                 }
             } else {
                 System.out.println("Invalid input. Please enter a valid double.");
-                pipe.next(); // Read and discard the invalid input
+                pipe.next();
             }
         } while (!validInput);
 
-        pipe.nextLine(); // Clear the newline character from the buffer
+        pipe.nextLine();
         return rangedDouble;
     }
 
@@ -108,7 +108,7 @@ public class SafeInput {
 
         do {
             System.out.print("\n" + prompt + ": ");
-            String userInput = pipe.nextLine().trim().toUpperCase(); // Convert input to uppercase and trim any leading/trailing whitespace
+            String userInput = pipe.nextLine().trim().toUpperCase();
 
             if (userInput.equals("Y") || userInput.equals("YES")) {
                 confirm = true;
@@ -130,7 +130,7 @@ public class SafeInput {
 
         do {
             System.out.print("\n" + prompt + ": ");
-            userInput = pipe.nextLine().trim(); // Read input and remove leading/trailing whitespace
+            userInput = pipe.nextLine().trim();
 
             if (userInput.matches(regEx)) {
                 validInput = true;
